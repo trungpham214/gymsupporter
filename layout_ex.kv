@@ -1,0 +1,50 @@
+<BoxLayoutMain>:
+    exercise: root.exercise
+    orientation: "vertical"
+
+    Label: 
+        text: root.exercise
+
+    Camera:
+        index: 0
+        resolution: self.resolution
+        play: True
+
+    Button:
+        text: root.button_stage
+        on_press: root.on_click_tracker()
+
+    BoxLayout:
+        orientation: "horizontal"
+        Label:
+            text:root.menu_state
+        Label:
+            text:root.menu_angle
+        Label:
+            text:root.menu_counter
+
+<ShoulderLayout>:
+
+<BicepLayout>:
+
+#TODO:
+
+
+<PushLayoutTabs@TabbedPanel>
+    do_default_tab: False
+    TabbedPanelItem:
+        text: "shoulder"
+        ShoulderLayout:
+
+<PullLayoutTabs@TabbedPanel>
+    do_default_tab: False
+    TabbedPanelItem
+        text: "bicep"
+        BicepLayout:
+
+<ScrollViewExample@ScrollView>:
+    StackLayoutExample:
+        size_hint: 1, None
+        height: self.minimum_height
+
+<StackLayoutExample>:

@@ -1,0 +1,35 @@
+#:import layout_ex layout_ex
+#:import navigation_screen_manager navigation_screen_manager
+#:import boxlayout_with_action_bar boxlayout_with_action_bar
+
+<MyScreenManager>
+    Screen:
+        name: "MainMenu"
+        MainMenu:
+    Screen:
+        name: "pullday"
+        BoxLayoutWithActionBar:
+            PullLayoutTabs:
+    Screen:
+        name: "pushday"
+        BoxLayoutWithActionBar:
+            PushLayoutTabs:
+    Screen:
+        name: "custom"
+        BoxLayoutWithActionBar:
+            ScrollViewExample:
+
+<MainMenu@BoxLayout>:
+    Screen:
+        name: "home"
+        BoxLayout:
+            orientation: "vertical"
+            Button:
+                text: "Pull Day"
+                on_press: app.manager.push("pullday")
+            Button:
+                text: "Push Day"
+                on_press: app.manager.push("pushday")
+            Button:
+                text: "Custom"
+                on_press: app.manager.push("custom")
